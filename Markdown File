@@ -1,0 +1,275 @@
+# 🏆 Query Arena
+
+> Learn SQL through interactive challenges, gain XP, unlock achievements, and become a Query Champion.
+
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-8-purple?logo=vite)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-green?logo=supabase)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+---
+
+# 📖 Overview
+
+Query Arena is a gamified SQL learning platform designed to make database learning engaging and interactive.
+
+Instead of memorizing SQL syntax, users solve progressively difficult challenges, earn XP, unlock achievements, and climb the leaderboard.
+
+The project combines modern web technologies with an interactive gaming experience to encourage hands-on SQL practice.
+
+---
+
+# 🚀 Features
+
+- 🔐 Secure User Authentication
+- 👤 User Profiles
+- 🎯 SQL Coding Challenges
+- ⚡ Experience Points (XP) System
+- 🏅 Achievement Progression
+- 📊 Real-time Progress Tracking
+- 🧩 Incremental SQL Learning
+- 💾 PostgreSQL (Supabase) Integration
+- 🎨 Modern Responsive UI
+- 🌙 Dark Theme Interface
+
+---
+
+# 🎮 Learning Flow
+
+Each challenge follows an incremental learning approach.
+
+```
+Challenge
+     │
+     ▼
+Read Instructions
+     │
+     ▼
+Create Table
+     │
+     ▼
+Insert Data
+     │
+     ▼
+Execute SQL Query
+     │
+     ▼
+Validation
+     │
+     ▼
+Earn XP
+     │
+     ▼
+Unlock Next Challenge
+```
+
+---
+
+# 📚 SQL Topics Covered
+
+Current implementation includes:
+
+- SELECT
+- WHERE
+- ORDER BY
+- GROUP BY
+- JOIN
+- Aggregate Functions
+- Constraints
+- Primary Keys
+- Foreign Keys
+- Subqueries
+
+More challenges can easily be added through Supabase.
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+## Backend
+
+- Supabase
+- PostgreSQL
+
+## Authentication
+
+- Supabase Auth
+
+## Development Tools
+
+- VS Code
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+query-arena/
+
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── supabase/
+│
+├── package.json
+├── vite.config.js
+├── README.md
+└── .gitignore
+```
+
+---
+
+# 🧠 How It Works
+
+1. User signs in.
+2. Available SQL challenges are loaded.
+3. User writes SQL queries.
+4. Query is validated.
+5. XP is awarded.
+6. Progress is stored in Supabase.
+7. New challenges become available.
+
+---
+
+# 🏅 XP System
+
+Successful completion of challenges rewards players with Experience Points.
+
+Examples:
+
+| Challenge | XP |
+|------------|----|
+| SELECT Basics | 50 |
+| WHERE Clause | 75 |
+| JOIN Challenge | 100 |
+| GROUP BY | 120 |
+| Subquery | 150 |
+
+---
+
+# 💡 Future Enhancements
+
+- 🥇 Global Leaderboard
+- 🔥 Daily SQL Challenges
+- 📈 User Statistics Dashboard
+- 🧩 SQL Hint System
+- 🎖 Badges & Rewards
+- 🌍 Community Challenges
+- AI SQL Assistant
+- Query Optimization Suggestions
+- Timed Challenge Mode
+- Multiplayer SQL Battles
+
+---
+
+# ⚙ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/lithes-coder/query-arena.git
+```
+
+Move into the project
+
+```bash
+cd query-arena
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run locally
+
+```bash
+npm run dev
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file.
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+```
+
+---
+
+# 📸 Screenshots
+
+Add screenshots here.
+
+Examples:
+
+- Login Page
+- Dashboard
+- SQL Editor
+- Challenge Screen
+- XP Progress
+- Challenge Completion
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+# 📈 Project Goals
+
+- Make SQL learning interactive.
+- Improve practical database skills.
+- Encourage learning through gamification.
+- Provide a beginner-friendly coding environment.
+
+---
+
+# 📄 License
+
+This project is released under the MIT License.
+
+---
+
+# 👨‍💻 Developer
+
+**Lithesh S**
+
+B.Tech Information Technology
+
+Sri Sairam Institute of Technology
+
+GitHub:
+https://github.com/lithes-coder
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
