@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #050505;
+}
+
+.ambient-shell {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  background: radial-gradient(circle at top right, rgba(0, 191, 255, 0.08), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(57, 255, 20, 0.08), transparent 28%),
+    #050505;
+  color: white;
+}
+
+.ambient-shell {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(0, 191, 255, 0.08), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(57, 255, 20, 0.08), transparent 28%),
+    #050505;
+  color: white;
+}
+
+.ambient-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 35%),
+    radial-gradient(circle at 20% 15%, rgba(57, 255, 20, 0.12), transparent 20%),
+    radial-gradient(circle at 85% 10%, rgba(0, 191, 255, 0.12), transparent 16%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.ambient-shell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--cursor-x, 50px) var(--cursor-y, 50px), rgba(57, 255, 20, 0.14), transparent 18%),
+    radial-gradient(circle at calc(var(--cursor-x, 50px) + 180px) calc(var(--cursor-y, 50px) - 80px), rgba(0, 191, 255, 0.1), transparent 20%);
+  pointer-events: none;
+  filter: blur(24px);
+  opacity: 0.88;
+  transition: background-position 0.12s linear;
+}
+
+.smoke-layer,
+.ambient-shell::before,
+.ambient-shell::after {
+  mix-blend-mode: screen;
+}
+
+.ambient-shell .smoke-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-shell .page-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1126px, 100%);
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.ambient-shell.ambient-dashboard {
+  background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.12), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(0, 191, 255, 0.12), transparent 24%),
+    #09090d;
+}
+
+.ambient-shell.ambient-settings {
+  background: radial-gradient(circle at 15% 20%, rgba(255, 76, 166, 0.12), transparent 18%),
+    radial-gradient(circle at 80% 15%, rgba(57, 255, 20, 0.1), transparent 26%),
+    #050505;
+}
+
+.ambient-shell.ambient-challenge {
+  background: radial-gradient(circle at 80% 15%, rgba(0, 191, 255, 0.12), transparent 22%),
+    radial-gradient(circle at 20% 80%, rgba(255, 220, 30, 0.08), transparent 24%),
+    #08080c;
+}
+
+.ambient-shell.ambient-debug {
+  background: radial-gradient(circle at 20% 25%, rgba(57, 255, 20, 0.14), transparent 20%),
+    radial-gradient(circle at 82% 18%, rgba(255, 77, 132, 0.08), transparent 24%),
+    #050505;
+}
+
+.ambient-shell.ambient-word {
+  background: radial-gradient(circle at 25% 20%, rgba(0, 191, 255, 0.14), transparent 20%),
+    radial-gradient(circle at 78% 16%, rgba(255, 204, 0, 0.08), transparent 24%),
+    #07070b;
+}
+
+.ambient-shell.ambient-dashboard::after,
+.ambient-shell.ambient-settings::after,
+.ambient-shell.ambient-challenge::after,
+.ambient-shell.ambient-debug::after,
+.ambient-shell.ambient-word::after {
+  background: radial-gradient(circle at var(--cursor-x, 50px) var(--cursor-y, 50px), rgba(255, 255, 255, 0.06), transparent 18%),
+    radial-gradient(circle at calc(var(--cursor-x, 50px) + 180px) calc(var(--cursor-y, 50px) - 80px), rgba(0, 191, 255, 0.08), transparent 20%);
+}
+
+.ambient-shell .ambient-panel {
+  position: relative;
+  z-index: 1;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(4, 4, 7, 0.85);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+}
+
+.ambient-shell button,
+.ambient-shell input,
+.ambient-shell textarea {
+  font-family: monospace;
+}
+
+@keyframes ambient-smoke {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(12px, -8px) scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+.ambient-shell .smoke-layer {
+  animation: ambient-smoke 18s ease-in-out infinite;
+}
+
+
+/* Toast Container - Fixed position */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Toast */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  max-width: 400px;
+  animation: slideIn 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+/* Toast Types */
+.toast-success {
+  border-left-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.toast-error {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+.toast-warning {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.toast-info {
+  border-left-color: #3b82f6;
+  background: #eff6ff;
+}
+
+/* Toast Elements */
+.toast-icon {
+  font-size: 20px;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.toast-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .toast-container {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .toast {
+    min-width: auto;
+    max-width: 100%;
+  }
+}
